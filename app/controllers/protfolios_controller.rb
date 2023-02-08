@@ -1,4 +1,5 @@
 class ProtfoliosController < ApplicationController
+
     def index
         @protfolio_items = Protfolio.all
     end
@@ -32,18 +33,30 @@ class ProtfoliosController < ApplicationController
         respond_to do |format|
           if @protfolio_item.update(params.require(:protfolio).permit(:title,:subtitle, :body))
             format.html { redirect_to protfolios_path, notice: "the record was successfully updated." }
-            format.json { render :show, status: :ok, location: @blog }
+
           else
             format.html { render :edit, status: :unprocessable_entity }
-            format.json { render json: @blog.errors, status: :unprocessable_entity }
           end
+        end
+    end
+    def destroy
+        @protfolio_item = Protfolio.find(params[:id])
+        @protfolio_item.destroy
+
+        respond_to do |format|
+          format.html { redirect_to protfolio_url, notice: "Blog was successfully destroyed." }
+          format.json { head :no_content }
         end
     end
 
     def show
+   
         @protfolio_item = Protfolio.find(params[:id])
-        
+
 
 
     end
+
+    
+
 end

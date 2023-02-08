@@ -1,6 +1,5 @@
 class ProtfoliosController < ApplicationController
     def index
-<<<<<<< HEAD
         @protfolio_items = Protfolio.all
     end
 
@@ -38,10 +37,4 @@ class ProtfoliosController < ApplicationController
           end
         end
     end
-=======
-        @portfolio_items = Protfolio.all
-    end
-
-
->>>>>>> origin/portfolio-feature
 end

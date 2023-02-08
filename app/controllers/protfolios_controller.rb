@@ -25,6 +25,8 @@ class ProtfoliosController < ApplicationController
         @protfolio_item = Protfolio.find(params[:id])
     end
 
+    
+
     def update
         @protfolio_item = Protfolio.find(params[:id])
         respond_to do |format|
@@ -36,5 +38,12 @@ class ProtfoliosController < ApplicationController
             format.json { render json: @blog.errors, status: :unprocessable_entity }
           end
         end
+    end
+
+    def show
+        @protfolio_item = Protfolio.find(params[:id])
+        
+
+
     end
 end

@@ -3,7 +3,7 @@
 
 
 <% @protfolio_items.each do |protfolio_item|%>
-    <p><%= protfolio_item.title%></p>
+    <p><%= link_to protfolio_item.title,protfolio_path(protfolio_item.id) %></p>
     <p><%= protfolio_item.subtitle%></p>
     <p><%= protfolio_item.body%></p>
     <%= image_tag protfolio_item.thumb_image unless protfolio_item.thumb_image.nil?%>

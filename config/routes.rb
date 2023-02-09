@@ -6,6 +6,11 @@ Rails.application.routes.draw do
 
   root to: 'pages#home'
 
+  resources :blogs do
+    member do
+      post :toggle_status
+    end
+  end
 
 
 

@@ -16,7 +16,7 @@ end
 5.times do |skill|
     Skill.create!(
         title: "rails #{skill}",
-        percent_utilized :15
+        percent_utilized: 15
     )
 end
 
@@ -54,6 +54,11 @@ end
               laborum.",
         thumb_image: "https://via.placeholder.com/350x200",
         main_image: "https://via.placeholder.com/600x400"
+    )
+end
+3.times do |technology|
+    Protfolio.last.technologies.create!(
+        name: "technology #{technology}",
     )
 end
 

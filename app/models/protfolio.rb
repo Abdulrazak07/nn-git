@@ -1,4 +1,5 @@
 class Protfolio < ApplicationRecord
+    has_many :technologies
     include Placeholder
     validates_presence_of :title,:main_image,:thumb_image
     def self.angular

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_02_10_091135) do
+ActiveRecord::Schema[7.0].define(version: 2023_02_10_094427) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -57,6 +57,14 @@ ActiveRecord::Schema[7.0].define(version: 2023_02_10_091135) do
     t.text "badge"
   end
 
+  create_table "technologies", force: :cascade do |t|
+    t.string "name"
+    t.bigint "protfolio_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["protfolio_id"], name: "index_technologies_on_protfolio_id"
+  end
+
   create_table "topics", force: :cascade do |t|
     t.string "title"
     t.datetime "created_at", null: false
@@ -64,4 +72,5 @@ ActiveRecord::Schema[7.0].define(version: 2023_02_10_091135) do
   end
 
   add_foreign_key "blogs", "topics"
+  add_foreign_key "technologies", "protfolios"
 end

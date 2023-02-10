@@ -4,6 +4,10 @@ class ProtfoliosController < ApplicationController
         @protfolio_items = Protfolio.all
     end
 
+    def angular
+      @protfolio_angular_items = Protfolio.angular
+    end
+
     def new
       @protfolio_item = Protfolio.new
     end

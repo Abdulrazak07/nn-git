@@ -10,11 +10,13 @@ class ProtfoliosController < ApplicationController
 
     def new
       @protfolio_item = Protfolio.new
+      3.times {@protfolio_item.technologies.build}
     end
 
     def create
 
-        @protfolio_item = Protfolio.new(params.require(:protfolio).permit(:title,:subtitle, :body))
+        @protfolio_item = Protfolio.new(params.require(:protfolio).permit(:title,:subtitle, :body, 
+          technologies_attributes: [:name]))
     
           if @protfolio_item.save
             redirect_to protfolios_path

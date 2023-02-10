@@ -16,6 +16,7 @@ end
 5.times do |skill|
     Skill.create!(
         title: "rails #{skill}",
+        percent_utilized :15
     )
 end
 

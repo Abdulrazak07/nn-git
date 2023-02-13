@@ -63,7 +63,10 @@ class ProtfoliosController < ApplicationController
     end
 
     def protfolio_params
-      params.require(:protfolio).permit(:title,:subtitle, :body,technologies_attributes: [:name])
+      params.require(:protfolio).permit(:title,
+                                        :subtitle, 
+                                        :body,
+                                        technologies_attributes: [:name])
     end
 
     

@@ -15,8 +15,7 @@ class ProtfoliosController < ApplicationController
 
     def create
 
-        @protfolio_item = Protfolio.new(params.require(:protfolio).permit(:title,:subtitle, :body, 
-          technologies_attributes: [:name]))
+        @protfolio_item = Protfolio.new(protfolio_params)
     
           if @protfolio_item.save
             redirect_to protfolios_path
@@ -37,7 +36,7 @@ class ProtfoliosController < ApplicationController
     def update
         @protfolio_item = Protfolio.find(params[:id])
         respond_to do |format|
-          if @protfolio_item.update(params.require(:protfolio).permit(:title,:subtitle, :body))
+          if @protfolio_item.update(protfolio_params)
             format.html { redirect_to protfolios_path, notice: "the record was successfully updated." }
 
           else
@@ -61,6 +60,13 @@ class ProtfoliosController < ApplicationController
 
 
 
+    end
+
+    def protfolio_params
+      params.require(:protfolio).permit(:title,
+                                        :subtitle, 
+                                        :body,
+                                        technologies_attributes: [:name])
     end
 
     

@@ -9,12 +9,12 @@ class ProtfoliosController < ApplicationController
     end
 
     def new
+      
       @protfolio_item = Protfolio.new
       3.times {@protfolio_item.technologies.build}
     end
 
     def create
-
         @protfolio_item = Protfolio.new(protfolio_params)
     
           if @protfolio_item.save

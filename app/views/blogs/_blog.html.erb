@@ -2,6 +2,11 @@
   <p>
     <strong>Title:</strong>
     <%= blog.title %>
+
+  </p>
+  <p>
+    <strong>Date</strong>
+    <td>Published on <%= distance_of_time_in_words(blog.created_at,Time.now) %> ago</td>
   </p>
 
   <p>

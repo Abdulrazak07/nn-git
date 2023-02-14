@@ -1,5 +1,5 @@
 class ProtfoliosController < ApplicationController
-
+    layout 'protfolio'
     def index
         @protfolio_items = Protfolio.all
     end

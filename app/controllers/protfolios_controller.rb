@@ -29,6 +29,7 @@ class ProtfoliosController < ApplicationController
 
     def edit
         @protfolio_item = Protfolio.find(params[:id])
+        
     end
 
     

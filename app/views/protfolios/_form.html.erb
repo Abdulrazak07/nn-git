@@ -1,0 +1,19 @@
+
+<%= form_with model: @protfolio_item do |form| %>
+  <%= form.label :title %>
+  <%= form.text_field :title %>
+
+  <%= form.label :body %>
+  <%= form.text_area :body %>
+
+  <ul>
+    <%= form.fields_for :technologies do |technology_form| %>
+    <li>
+      <%= technology_form.label :name%>
+      <%= technology_form.text_field :name%>
+    </li>
+    <% end %>
+  </ul>
+
+  <%= form.submit %>
+<% end %>

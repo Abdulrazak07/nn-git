@@ -1,4 +1,5 @@
 <%= form_with(model: blog) do |form| %>
+  <h1><%= puts form%></h1>
   <% if blog.errors.any? %>
     <div style="color: red">
       <h2><%= pluralize(blog.errors.count, "error") %> prohibited this blog from being saved:</h2>

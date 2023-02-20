@@ -1,5 +1,8 @@
 class ProtfoliosController < ApplicationController
     layout 'protfolio'
+    access all: [:show, :index, :angular], user: {except:[:destroy, :new, :create, :update, :edit]},site_admin: :all
+
+
     def index
         @protfolio_items = Protfolio.all
     end
@@ -62,6 +65,8 @@ class ProtfoliosController < ApplicationController
 
 
     end
+
+    private
 
     def protfolio_params
       params.require(:protfolio).permit(:title,

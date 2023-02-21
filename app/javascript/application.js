@@ -19,3 +19,4 @@ require('channels');
 require('lib/following');
 require('trix');
 require('@rails/actiontext');
+//= require rails-ujs

@@ -5,7 +5,6 @@ class PagesController < ApplicationController
   end
 
   def about
-    raise
   end
 
   def contact
